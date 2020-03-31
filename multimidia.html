@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- deixar o arquivo como de lingua portuguesa nas pesquisas do google-->
+    <head>
+        <meta charset="UTF-8"> <!-- definir o padrão do teclado pro latino-->
+        <title>Multimídia</title>
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="/_css/media.css">
+    </head>
+    <script src="funçoes.js"></script>
+    <body>
+        <div id="interface"> <!-- div significa divisão, divisão dos conteúdos-->
+            <header id="cabeçalho">
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+                <img id="icone" src="_imagens/multimidia.png"> <!--NUNCA COLOCAR C:/ (SÓ VAI FUNCIONAR NA SUA MÁQUINA-->
+                <nav id="menu" onmouseout="mudaFoto ('_imagens/multimidia.png')"> <!-- MENU DE NAVEGAÇÃO-->
+                    <h1 style="display: none;">Menu Principal</h1>
+                    <ol> <!-- LISTA ORDENADA -->
+                        <li onmouseover="mudaFoto('_imagens/home.png')"> <a href="index.html">Home</a> </li> <!-- ITENS -->
+                        <li onmouseover="mudaFoto('_imagens/especificacoes.png')"> <a href="specs.html">Especificações</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/fotos.png')"> <a href="fotos.html">Fotos</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/multimidia.png')"> <a href="multimidia.html">Multimídia</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/contato.png')"> <a href="fale-conosco.html">Fale conosco</a> </li>
+                    </ol>
+                </nav>
+            </header>
+            <section id="conteudo">
+                <article id="noticia-principal">
+                    <header id="cabeçalho-artigo">
+                        <h3>Glass > Multimídia</h3>
+                        <h1>Sons e Videos</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3>Atualizado em 01/Maio/2013</h3>
+                    </header>
+                </article>
+            </section>
+            <div id="tv-radio">
+                <audio id="musica" src="/_media/2009-lovers-carvings-bibio.mp3" controls></audio>
+                <video id="filme" src="/_media/getting-started.mp4" controls poster="/_imagens/video-mini03.jpg"></video> <!-- CONTROLS VAI CRIAR O PLAYER DO AUDIO/VIDEO--> <!-- POSTER VAI CRIAR A THUMBNAIL-->
+            </div>
+
+            <footer id="rodape">
+                <p>
+                    Copyright&copy; 2013 - by Gustavo Guanabara <br>
+                    <a href="https://www.google.com/search?q=cleiton+rasta&oq=cleiton+rasta&aqs=chrome.0.0l8.2924j1j7&sourceid=chrome&ie=UTF-8" target="_blank">Facebook </a> | <a href="https://www.google.com/search?q=biroliro&oq=biroliro&aqs=chrome..69i57j0l7.1727j0j9&sourceid=chrome&ie=UTF-8" target="_blank">Twitter</a>
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4EvNxWhskf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- IFRAME TESTE DE INCORPORAÇÃO COM O YOUTUBE-->
+            </footer>
+        </div>
+    </body>
+</html>

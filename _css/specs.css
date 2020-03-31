@@ -1,0 +1,15 @@
+section#conteudo {
+    width: 1000px;
+    margin: auto; /* CENTRALIZA AUTOMATICAMENTE INDEPENDENTE DO TAMANHO */
+}
+iframe#frame-spec {
+    height: 300px;
+    width: 500px;
+    overflow: hidden;
+    padding-left: 100px;
+    border: none;
+    padding-bottom: 20px;
+}
+area {
+    outline: 0; /* FAZ COM QUE QUANDO CLIQUE NA AREA NÃO APAREÇA A BORDA AZUL */
+}

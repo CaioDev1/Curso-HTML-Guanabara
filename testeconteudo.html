@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste conteudo aqui</title>
+    <style>
+        div#galeria {
+            padding-top: 50px;
+            width: 700px;
+            height: 700px;
+        }
+        div#galeria li {
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.267);
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            list-style: none;
+            float: left;
+        }
+        div#galeria li span {
+            font-size: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+            left: 80px;
+            top: 70px;
+            opacity: 0;
+            color: white;
+        }
+        div#galeria li:hover span {
+            opacity: 1;
+            transition: 1s;
+        }
+        div#galeria li#img1 {
+            background: url('_imagens/galeria-01.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img1:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+        div#galeria li#img2 {
+            background: url('_imagens/galeria-02.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img2:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+        div#galeria li#img3 {
+            background: url('_imagens/galeria-03.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img3:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+        div#galeria li#img4 {
+            background: url('_imagens/galeria-04.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img4:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+        div#galeria li#img5 {
+            background: url('_imagens/galeria-05.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img5:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+        div#galeria li#img6 {
+            background: url('_imagens/galeria-06.jpg');
+            background-size: 400px 400px;
+        }
+        div#galeria li#img6:hover {
+            transform: scale(1.5);
+            background-size: 200px 200px;
+            transition: 1s;
+        }
+    </style>
+</head>
+<script>
+    function mudaPreco () {
+        var qtd = Number (document.querySelector ('input#iQtd').value)
+        var total = qtd * 1500
+        document.querySelector ('input#iPrc').value = total
+    }
+</script>
+<body>
+    <div id="galeria">
+        <ul>
+            <li id="img1"><span>1</span></li>
+            <li id="img2"><span>2</span></li>
+            <li id="img3"><span>3</span></li>
+            <li id="img4"><span>4</span></li>
+            <li id="img5"><span>5</span></li>
+            <li id="img6"><span>6</span></li>
+        </ul>
+    </div>
+    <div id="audio-video">
+        <audio src="/_media/2009-lovers-carvings-bibio.mp3" controls id="musica"></audio>
+        <video src="/_media/getting-started.mp4" controls id="filme" poster="/_imagens/video-mini03.jpg"></video>
+    </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/oowBXzfcl90" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div>
+        <form id="formulario" action="" oninput="mudaPreco ()">
+            <fieldset>
+                <legend>1</legend>
+                <p>
+                    <label for="iTexto">Texto</label>
+                    <input type="text" name="" id="iTexto" size="10" maxlength="15" placeholder="Nome">
+                </p>
+                <p>
+                    <label for="iSenha">Senha</label>
+                    <input type="password" name="" id="iSenha">
+                </p>
+                <p>
+                    <label for="iEmail">Email</label>
+                    <input type="email" name="" id="iEmail">
+                </p>
+                <p>
+                    <fieldset>
+                        <legend>Sexo</legend>
+                        <input type="radio" name="nSexo" id="iMasc" checked>
+                        <label for="iMasc">Masculino</label> <br>
+                        <input type="radio" name="nSexo" id="iFemi">
+                        <label for="iFemi">Feminino</label>
+                    </fieldset>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>2</legend>
+                <p>
+                    <label for="iEst">Estado</label>
+                    <select name="" id="iEst">
+                        <optgroup label="Nordeste">
+                            <option value="PE">Pernambuco</option>
+                        </optgroup>
+                        <optgroup label="Sudeste">
+                            <option value="SP" selected>São Paulo</option>
+                        </optgroup>
+                    </select> <br>
+                </p>
+                <p>
+                    <label for="iCid">Cidade</label>
+                    <input type="text" name="" id="iCid" list="cidades">
+                    <datalist id="cidades">
+                        <option value="Recife"></option>
+                        <option value="Jaboatão"></option>
+                    </datalist>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>3</legend>
+                <p>
+                    <label for="iUrg">Grau de Urgência</label>
+                    <input type="range" name="" id="iUrg" min="1" max="10">
+                </p>
+                <p>
+                    <label for="iMsg">Mensagem</label>
+                    <textarea name="" id="iMsg" cols="30" rows="10"></textarea>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>4</legend>
+                <p>
+                    <input type="checkbox" name="" id="iBox">
+                    <label for="iBox"> Sou corno</label>
+                </p>
+                <p>
+                    <label for="iCor">Cor</label>
+                    <input type="color" name="" id="iCor">
+                </p>
+                <p>
+                    <label for="iQtd">Quantidade</label>
+                    <input type="number" name="" id="iQtd" min="1" max="10">
+                </p>
+                <p>
+                    <input type="text" name="" id="iPrc" readonly placeholder="Valor total">
+                </p>
+            </fieldset>
+            <input type="image" src="/praticas/lula.png" alt="" style="height: 200px" width="150px">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- deixar o arquivo como de lingua portuguesa nas pesquisas do google-->
+    <head>
+        <meta charset="UTF-8"> <!-- definir o padrão do teclado pro latino-->
+        <title>Fale Conosco</title>
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="/_css/form.css">
+    </head>
+    <script src="funçoes.js"></script>
+    <script>
+        function somapreco () {
+            var qtd = Number (document.querySelector ('input#iQtd').value)
+            var total = qtd * 1500
+            document.querySelector ('input#iPrç').value = total
+        }
+    </script>
+    <body>
+        <div id="interface"> <!-- div significa divisão, divisão dos conteúdos-->
+            <header id="cabeçalho">
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+                <img id="icone" src="_imagens\glass-oculos-preto-peq.png"> <!--NUNCA COLOCAR C:/ (SÓ VAI FUNCIONAR NA SUA MÁQUINA-->
+                <nav id="menu" onmouseout="mudaFoto ('_imagens/glass-oculos-preto-peq.png')"> <!-- MENU DE NAVEGAÇÃO-->
+                    <h1 style="display: none;">Menu Principal</h1>
+                    <ol> <!-- LISTA ORDENADA -->
+                        <li onmouseover="mudaFoto('_imagens/home.png')"> <a href="index.html">Home</a> </li> <!-- ITENS -->
+                        <li onmouseover="mudaFoto('_imagens/especificacoes.png')"> <a href="specs.html">Especificações</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/fotos.png')"> <a href="fotos.html">Fotos</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/multimidia.png')"> <a href="multimidia.html">Multimídia</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/contato.png')"> <a href="fale-conosco.html">Fale conosco</a> </li>
+                    </ol>
+                </nav>
+            </header>
+            <section>
+                <header id="cabeçalho-artigo">
+                    <h3>Fale Conosco </h3>
+                    <h1>Formulária de Contato</h1>
+                    <h2>por Gustavo Guanabara</h2>
+                    <h3>Atualizado em 01/Maio/2013</h3>
+                </header>
+            </section>
+            <form method="POST" id="contato" action="mailto: contato@gmail.com" oninput="somapreco ()"> <!-- BLOCO DE INPUTS--> <!-- ONINPUT NA TAG FORM FAZ COM QUE TODOS OS INPUTS QUE TENHAM VALORES ALTERADOS ATUALIZEM ALTOMATICAMENTE DEPENDENDO DO SCRIPT--><!-- METHOD POST É UMA FORMA DE PEGAR ESSES DADOS MAIS SEGURO (INVÉS DE GET QUE É POR URL)--> <!-- PRA USAR O MAILTO É NECESSÁRIO TER UM CLIENTE DE EMAIL-->
+                <fieldset id="usuario">
+                    <legend>Identificação do Usuário</legend>
+                        <p>
+                            <label for="iNome">Nome:</label>
+                            <input type="text" name="nNome" id="iNome" size="20" maxlength="20" placeholder="Nome">
+                        </p>
+                        <p>
+                            <label for="iSenha">Senha:</label>
+                            <input type="password" name="nSenha" id="iSenha" size="15" maxlength="15" placeholder="Senha">
+                        </p>
+                        <p>
+                            <label for="iEmail">E-mail:</label>
+                            <input type="email" name="nEmail" id="iEmail" size="30" maxlength="40" placeholder="E-mail">
+                        </p>
+                        <fieldset id="sexo">
+                            <legend>Sexo:</legend> <br>
+                            <input type="radio" name="nSexo" id="iMasc" checked>
+                            <label for="iMasc">Masculino</label> <br>
+                            <input type="radio" name="nSexo" id="iFemi">
+                            <label for="iFemi">Feminino</label>
+                        </fieldset>
+                        <p>
+                            <label for="iData">Data de Nascimento:</label>
+                            <input type="date" name="nData" id="iData">
+                        </p>
+                </fieldset>
+                <fieldset id="endereço">
+                    <legend>Endereço do Usuário</legend>
+                    <p>
+                        <label for="iRua">Logradouro:</label>
+                        <input type="text" name="nRua" id="iRua" size="20" maxlength="40" placeholder="Av, Rua, Bloco..">
+                    </p>
+                    <p>
+                        <label for="iNum">Número:</label>
+                        <input type="number" name="nNum" id="iNum" min="0" max="9999" placeholder="13,64,39..">
+                    </p>
+                    <p> 
+                        <label for="iEst">Estado:</label>
+                        <select name="nEst" id="iEst">
+                            <optgroup label="Região Sudeste">
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="SP" selected>São Paulo</option>
+                            </optgroup> <!--VALUE DIZ QUE O PROVEDOR VAI RECEBER NESSE CASO A INFORMAÇÃO DE ESCOLHA COMO "RJ" NO BANCO DE DADOS--> <!-- O VALOR SELECT JÁ DEIXA PRE-SELECIONADO-->
+                            <optgroup label="Região Nordeste">
+                                <option value="CE">Ceará</option>
+                                <option value="PE">Pernambuco</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="iCid">Cidade:</label>
+                        <input list="cidades" type="text" name="nCid" id="iCid" size="20" maxlength="40" placeholder="Ex: Recife">
+                    </p>
+                    <datalist id="cidades"> <!-- DATALIST VAI CRIAR UMA BARRA DE PRE OPÇÕES PRO INPUT DE CIDADES (SE LIGAR NO "LIST" NO INPUT)-->
+                        <option value="Jaboatão"></option>
+                        <option value="Recife"></option>
+                        <option value="Olinda"></option>
+                        <option value="Paulista"></option>
+                    </datalist>
+                </fieldset>
+                <fieldset id="mensagem">
+                    <legend>Mensagem do Usuário</legend>
+                    <p>
+                        <label for="iUrg">Grau de Urgência:</label> Min
+                        <input type="range" name="nUrg" id="iUrg" min="1" max="10" step="2"> Max
+                    </p>
+                    <p>
+                        <label for="iMsg">Mensagem:</label>
+                        <textarea name="nMsg" id="iMsg" cols="30" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                        <!--COLS É O NUMERO DE COLUNAS DA TEXTAREA E ROWS É O NUMERO DE LINHAS-->
+                    </p>
+                </fieldset>
+                <fieldset id="pedido">
+                    <legend>Quero um Google Glass</legend>
+                    <p>
+                        <input type="checkbox" name="nOpt" id="iOpt">
+                        <label for="iOpt">Gostaria de adquirir um Google Glass quando disponível</label>
+                    </p>
+                    <p>
+                        <label for="iCor">Cor:</label>
+                        <input type="color" name="nCor" id="iCor">
+                    </p>
+                    <p>
+                        <label for="iQtd">Quantidade:</label>
+                        <input type="number" name="nQtd" id="iQtd" min="1" max="10" value="1">
+                    </p>
+                    <p>
+                        <label for="iPrç">Preço Total: R$</label>
+                        <input type="number" name="nPrç" id="iPrç" readonly placeholder=" Valor Total">
+                    </p>
+                </fieldset>
+                <input type="image" id="enviar" src="/_imagens/botao-enviar.png" alt="botão de enviar submit">
+            </form>
+            <footer id="rodape">
+                <p>
+                    Copyright&copy; 2013 - by Gustavo Guanabara <br>
+                    <a href="https://www.google.com/search?q=cleiton+rasta&oq=cleiton+rasta&aqs=chrome.0.0l8.2924j1j7&sourceid=chrome&ie=UTF-8" target="_blank">Facebook </a> | <a href="https://www.google.com/search?q=biroliro&oq=biroliro&aqs=chrome..69i57j0l7.1727j0j9&sourceid=chrome&ie=UTF-8" target="_blank">Twitter</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
+            

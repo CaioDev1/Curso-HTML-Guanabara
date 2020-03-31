@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- deixar o arquivo como de lingua portuguesa nas pesquisas do google-->
+    <head>
+        <meta charset="UTF-8"> <!-- definir o padrão do teclado pro latino-->
+        <title>Especificações</title>
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="_css/specs.css">
+    </head>
+    <script src="funçoes.js"></script>
+    <body>
+        <div id="interface"> <!-- div significa divisão, divisão dos conteúdos-->
+            <header id="cabeçalho">
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+                <img id="icone" src="_imagens\especificacoes.png"> <!--NUNCA COLOCAR C:/ (SÓ VAI FUNCIONAR NA SUA MÁQUINA-->
+                <nav id="menu" onmouseout="mudaFoto ('_imagens/es.png')"> <!-- MENU DE NAVEGAÇÃO-->
+                    <h1 style="display: none;">Menu Principal</h1>
+                    <ol> <!-- LISTA ORDENADA -->
+                        <li onmouseover="mudaFoto('_imagens/home.png')"> <a href="index.html">Home</a> </li> <!-- ITENS -->
+                        <li onmouseover="mudaFoto('_imagens/especificacoes.png')"> <a href="specs.html">Especificações</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/fotos.png')"> <a href="fotos.html">Fotos</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/multimidia.png')"> <a href="multimidia.html">Multimídia</a> </li>
+                        <li onmouseover="mudaFoto('_imagens/contato.png')"> <a href="fale-conosco.html">Fale conosco</a> </li>
+                    </ol>
+                </nav>
+            </header>
+            <section id="conteudo">
+                <article id="noticia-principal">
+                    <header id="cabeçalho-artigo">
+                        <h3>Glass > Especificações</h3>
+                        <h1>Raio-X no Google Glass</h1>
+                        <h2>por Gustavo Guanabara</h2>
+                        <h3>Atualizado em 01/Maio/2013</h3>
+                    </header>
+                </article>
+            </section>
+            <p>Clique em qualquer área destacada da imagem para ter mais informações sobre os recursos do Google Glass. Qualquer ponto vermelho vai te levar a um lugar cheio de novas informações.</p>
+            <img src="/_imagens/glass-esquema-marcado.jpg" usemap="#meumapa" alt="mapa do oculos">
+            <map name="meumapa">
+                <area shape="rect" coords="179,202,270,260" href="google-glass.html#tela" target="janela">
+                <area shape="circle" coords="158,243,12" href="google-glass.html#camera" target="janela">
+                <area shape="circle" coords="73,52,12" href="google-glass.html#gadjets" target="janela">
+                <area shape="poly" coords="28,143,83,216,84,249,27,169" href="google-glass.html#sensores" target="janela">
+            </map>
+            <iframe src="google-glass.html" frameborder="0" name="janela" id="frame-spec"></iframe>
+            <footer id="rodape">
+                <p>
+                    Copyright&copy; 2013 - by Gustavo Guanabara <br>
+                    <a href="https://www.google.com/search?q=cleiton+rasta&oq=cleiton+rasta&aqs=chrome.0.0l8.2924j1j7&sourceid=chrome&ie=UTF-8" target="_blank">Facebook </a> | <a href="https://www.google.com/search?q=biroliro&oq=biroliro&aqs=chrome..69i57j0l7.1727j0j9&sourceid=chrome&ie=UTF-8" target="_blank">Twitter</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
